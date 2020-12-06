@@ -1,6 +1,6 @@
 {
-  "name": "easylearn",
-  "short_name": "easylearn",
+  "name": "price-calculator",
+  "short_name": "price-calculator",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

@@ -19,7 +19,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/easylearn'),
+      dir: require('path').join(__dirname, './coverage/price-calculator'),
       subdir: '.',
       reporters: [
         { type: 'html' },

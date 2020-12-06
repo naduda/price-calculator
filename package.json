@@ -1,5 +1,5 @@
 {
-  "name": "easylearn",
+  "name": "price-calculator",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod --base-href=/easylearn/ && cp dist/easylearn/index.html dist/easylearn/404.html"
+    "deploy": "ng build --prod --base-href=/price-calculator/ && cp dist/price-calculator/index.html dist/price-calculator/404.html"
   },
   "private": true,
   "dependencies": {

@@ -15,7 +15,6 @@ import { ConfirmDialogComponent, IConfirmDialog } from './diaolg/confirm-dialog/
 })
 export class AppComponent implements OnInit {
 
-  title = 'easylearn';
   deferredPrompt: any;
   showButton = false;
 
