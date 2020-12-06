@@ -1,0 +1,11 @@
+<div class="confirm-dialog">
+  <div [class]="headerClass" [innerHTML]="data?.header"></div>
+
+  <div [class]="descClass" [innerHTML]="data?.desc"></div>
+
+  <footer class="confirm-dialog__actions">
+    <span *ngIf="!data?.hideReject" class="confirm-dialog__button reject" [innerHTML]="data?.rejectLabel"
+          (click)="close(false)"></span>
+    <span class="confirm-dialog__button accept" [innerHTML]="data?.acceptLabel" (click)="close(true)"></span>
+  </footer>
+</div>

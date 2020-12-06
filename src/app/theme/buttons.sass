@@ -1,0 +1,56 @@
+.custom-btn
+  display: inline-flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+  border: 1px solid
+  border-radius: .2em
+  transition: all .3s ease
+  padding: .375em 2em
+  min-width: auto
+  font-size: inherit
+  outline: none
+  &:active
+    transform: scale(0.95)
+    outline: none
+  &:focus
+    outline: none
+  &:hover
+    cursor: pointer
+  &:disabled
+    opacity: .5
+    cursor: not-allowed
+    *
+      pointer-events: none
+
+$types: success, danger, warn, info, secondary, primary
+
+@each $type in $types
+  .btn_#{$type}
+    @extend .custom-btn
+    background-color: var(--#{$type}-base)
+    color: var(--#{$type}-text)
+    border-color: var(--#{$type}-base)
+    &:hover:not(:disabled)
+      color: var(--#{$type}-text)
+      background-color: var(--#{$type}-dark-20)
+      border-color: var(--#{$type}-dark-20)
+
+  .btn_outline-#{$type}
+    @extend .custom-btn
+    border-color: var(--#{$type}-base)
+    color: var(--#{$type}-base)
+    background-color: var(--#{$type}-text)
+    &:hover:not(:disabled)
+      color: var(--#{$type}-text)
+      background-color: var(--#{$type}-base)
+
+.btn_white
+  @extend .custom-btn
+  background-color: #ffffff
+  color: inherit
+  border-color: var(--secondary-light-30)
+  &:hover:not(:disabled)
+    color: inherit
+    background-color: var(--secondary-light-30)
+    border-color: var(--secondary-light-30)

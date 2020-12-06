@@ -1,0 +1,8 @@
+<div class="title">
+  <h1 (click)="vibrate()">Easy learn</h1>
+  <app-navigation></app-navigation>
+
+  <button class="btn_info" *ngIf="showButton" (click)="addToHomeScreen()">Add to Home screen</button>
+</div>
+
+<router-outlet></router-outlet>

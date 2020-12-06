@@ -1,0 +1,19 @@
+$types: success, danger, warn, info, secondary, primary
+$perc: 5, 10, 15, 20, 25, 30
+
+@each $type in $types
+  .t_#{$type}
+    color: var(--#{$type}-base)
+  .t_#{$type}-second
+    color: var(--#{$type}-text-second)
+  .bg_#{$type}
+    background-color: var(--#{$type}-base)
+  @each $p in $perc
+    .t_#{$type}-light-#{$p}
+      color: var(--#{$type}-light-#{$p})
+    .t_#{$type}-dark-#{$p}
+      color: var(--#{$type}-dark-#{$p})
+    .bg_#{$type}-light-#{$p}
+      background-color: var(--#{$type}-light-#{$p})
+    .bg_#{$type}-dark-#{$p}
+      background-color: var(--#{$type}-dark-#{$p})

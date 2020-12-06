@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <ng-container *ngFor="let item of items">
+    <button mat-button
+            [matMenuTriggerFor]="alphabetMenu"
+            [innerHTML]="item.title">
+    </button>
+
+    <mat-menu #alphabetMenu="matMenu" yPosition="below">
+      <ng-container *ngFor="let subItem of item.children">
+
+        <button mat-menu-item
+                [routerLink]="subItem.routerLink"
+                routerLinkActive="active"
+                [innerHTML]="subItem.title">
+        </button>
+
+      </ng-container>
+    </mat-menu>
+  </ng-container>
+</div>

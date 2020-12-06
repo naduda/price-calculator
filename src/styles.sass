@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap')
+@import './src/app/theme/buttons'
+@import './src/app/theme/text'
+
+
+*
+  box-sizing: border-box
+  &:before, &:after
+    box-sizing: border-box
+
+*::placeholder
+  color: #666
+  opacity: 1
+
+::selection
+  background: orange
+  color: #FFFFFF
+
+html
+  font-family: 'Open Sans', sans-serif
+  font-size: 10px
+
+html, body
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  margin: 0
+  padding: 0
+
+svg
+  fill: currentColor
+  height: 1em
+
+@media all and (display-mode: standalone)
+  body
+    background: linear-gradient(to top, #37aeec, #fff, #fff,#fff, #37aeec)
+
+
+
+
+
