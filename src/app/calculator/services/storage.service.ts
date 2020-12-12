@@ -80,4 +80,14 @@ export class StorageService {
     }
   }
 
+  changeValue(item: ISelectedComponent): void {
+    const storageItem = this.storageItemSubject.value;
+    const existsSelected = storageItem.selected.find(e => e.id === item.id);
+    if (existsSelected) {
+      existsSelected.value = item.value;
+      localStorage.setItem(STORAGE_NAME, JSON.stringify(storageItem));
+      this.storageItemSubject.next(storageItem);
+    }
+  }
+
 }

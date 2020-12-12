@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { filter, map, tap } from 'rxjs/operators';
 import { IComponent, ISelectedComponent } from '../../model/iterface';
 import { StorageService } from '../../services/storage.service';
 import { CreateFormDialogComponent } from '../create-form-dialog/create-form-dialog.component';
@@ -14,12 +15,21 @@ import { CreateFormDialogComponent } from '../create-form-dialog/create-form-dia
 export class SettingsComponent implements OnInit {
 
   isClient = false;
+  total = 0;
+
+  items$: Observable<ISelectedComponent[]>;
 
   constructor(
     public storageService: StorageService,
     private router: Router,
     private dialog: MatDialog,
-  ) { }
+  ) {
+    this.items$ = storageService.storageItem$
+      .pipe(
+        map(e => e.selected),
+        tap(e => this.total = e.reduce((a, b) => a + b.value * b.price, 0)),
+      );
+  }
 
   ngOnInit(): void {
     this.isClient = this.router.url.endsWith('/client');
@@ -52,7 +62,14 @@ export class SettingsComponent implements OnInit {
   }
 
   changeValue(item: ISelectedComponent, e: Event): void {
-    item.value = (e.target as any).value;
+    const value = (e.target as any).value;
+    if (!value) {
+      return;
+    }
+    this.storageService.changeValue({
+      ...item,
+      value,
+    });
   }
 
   changePrice(item: IComponent, e: Event): void {

@@ -20,17 +20,22 @@
   </ng-container>
 
   <ng-template #clientTmpl>
-    <main *ngIf="storageService.storageItem$ | async as storageItem">
+    <main *ngIf="items$ | async as items">
       <ul>
-        <li *ngFor="let item of storageItem.selected">
+        <li *ngFor="let item of items">
           <div class="row">
             <span class="name" [innerHTML]="item.name"></span>
-            <input class="val" type="number" min="1" [(ngModel)]="item.value">
+            <input class="val" type="number" min="1" [value]="item.value" (input)="changeValue(item, $event)">
             <span class="res" [innerHTML]="item.price * item.value"></span>
             <mat-icon (click)="removeComponent(item.id)">remove_circle</mat-icon>
           </div>
         </li>
       </ul>
     </main>
+
+    <footer>
+      <span>Total: </span>
+      <span [innerHTML]="total"></span>
+    </footer>
   </ng-template>
 </div>

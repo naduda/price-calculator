@@ -4,6 +4,8 @@
 
 .wrapper
   padding: 2rem
+  display: flex
+  flex-direction: column
   header
     display: flex
     flex-direction: row
@@ -15,6 +17,13 @@
       flex: 1
     mat-icon
       cursor: pointer
+  main
+    min-height: 0
+    flex: 1
+  footer
+    padding: 2rem
+    text-align: right
+    font-weight: bold
 
 ul
   list-style: decimal
