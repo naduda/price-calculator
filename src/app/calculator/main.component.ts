@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from './services/storage.service';
 
 @Component({
   selector: 'app-main',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(storageService: StorageService) {
+    storageService.init();
+  }
 
   ngOnInit(): void {
   }

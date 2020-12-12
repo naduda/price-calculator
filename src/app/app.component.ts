@@ -40,22 +40,17 @@ export class AppComponent implements OnInit {
   ) {
     this.isMobile = this.platform.IOS || this.platform.ANDROID;
 
-    console.log('isMobile - ', this.isMobile, this.platform);
-
     breakpointObserver.observe([
       '(display-mode: standalone)'
     ]).subscribe((state: BreakpointState) => {
       this.isPwa = state.breakpoints['(display-mode: standalone)'];
-      console.log('isPwa - ', this.isPwa);
     });
 
     interval(60000 * 60).subscribe(() => {
-      console.log('interval');
       this.updates.checkForUpdate();
     });
 
     this.updates.available.subscribe((event) => {
-      console.log(event);
       this.updates
         .activateUpdate()
         .then(() => {
@@ -72,7 +67,6 @@ export class AppComponent implements OnInit {
           }).afterClosed()
             .pipe(filter(Boolean))
             .subscribe(() => this.document.location.reload());
-
         });
     });
 

@@ -1,1 +1,36 @@
-<p>settings works!</p>
+<div class="wrapper">
+  <header>
+    <h1>Components</h1>
+
+    <mat-icon (click)="addComponent()">add_circle</mat-icon>
+  </header>
+
+  <ng-container *ngIf="!isClient; else clientTmpl">
+    <main *ngIf="storageService.storageItem$ | async as storageItem">
+      <ul>
+        <li *ngFor="let item of storageItem.components">
+          <div class="row between">
+            <span class="name" [innerHTML]="item.name"></span>
+            <input class="val" type="number" min="1" [value]="item.price" (input)="changePrice(item, $event)">
+            <mat-icon (click)="removeComponent(item.id)">remove_circle</mat-icon>
+          </div>
+        </li>
+      </ul>
+    </main>
+  </ng-container>
+
+  <ng-template #clientTmpl>
+    <main *ngIf="storageService.storageItem$ | async as storageItem">
+      <ul>
+        <li *ngFor="let item of storageItem.selected">
+          <div class="row">
+            <span class="name" [innerHTML]="item.name"></span>
+            <input class="val" type="number" min="1" [(ngModel)]="item.value">
+            <span class="res" [innerHTML]="item.price * item.value"></span>
+            <mat-icon (click)="removeComponent(item.id)">remove_circle</mat-icon>
+          </div>
+        </li>
+      </ul>
+    </main>
+  </ng-template>
+</div>

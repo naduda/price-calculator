@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '', children: [
       { path: '', redirectTo: 'calculator', pathMatch: 'full' },
-      { path: 'calculator', loadChildren: () => import('./calculator//calculator.module').then(m => m.CalculatorModule) },
+      { path: 'calculator', loadChildren: () => import('./calculator/calculator.module').then(m => m.CalculatorModule) },
     ]
   },
 ];
