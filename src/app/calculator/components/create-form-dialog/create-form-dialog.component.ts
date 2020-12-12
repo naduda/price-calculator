@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { map, take } from 'rxjs/operators';
@@ -10,14 +10,16 @@ import { StorageService } from 'src/app/calculator/services/storage.service';
   templateUrl: './create-form-dialog.component.html',
   styleUrls: ['./create-form-dialog.component.sass']
 })
-export class CreateFormDialogComponent implements OnInit {
+export class CreateFormDialogComponent {
+
+  caption = 'Новий компонент';
 
   form: FormGroup;
 
   units = [
-    { value: EType.METER, label: 'Meter', },
-    { value: EType.HOUR, label: 'Hour', },
-    { value: EType.ONE, label: 'One', },
+    { value: EType.METER, label: 'кв.м.', },
+    { value: EType.HOUR, label: 'година', },
+    { value: EType.ONE, label: 'штука', },
   ];
 
   components: IComponent[] = [];
@@ -31,11 +33,8 @@ export class CreateFormDialogComponent implements OnInit {
     this.form = data.isClient ? this.buildClientForm(fb) : this.buildSettingsForm(fb);
     if (data.isClient) {
       this.initComponents();
+      this.caption = 'Вибір компоненту';
     }
-  }
-
-  ngOnInit(): void {
-
   }
 
   private initComponents(): void {
@@ -76,4 +75,5 @@ export class CreateFormDialogComponent implements OnInit {
   get nameControl(): FormControl {
     return this.form.get('name') as FormControl;
   }
+
 }

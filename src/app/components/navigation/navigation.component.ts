@@ -17,10 +17,10 @@ export class NavigationComponent {
 
   items: IMenuItem[] = [
     {
-      title: 'Menu',
+      title: 'Меню',
       children: [
-        { title: 'Client', routerLink: 'calculator/client' },
-        { title: 'Settings', routerLink: 'calculator/settings' },
+        { title: 'Калькулятор', routerLink: 'calculator/client' },
+        { title: 'Компоненти', routerLink: 'calculator/settings' },
       ],
     },
   ];

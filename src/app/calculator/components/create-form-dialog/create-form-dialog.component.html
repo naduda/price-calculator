@@ -1,6 +1,6 @@
 <div class="wrapper">
   <header>
-    <h2>Add new component</h2>
+    <h2 [innerHTML]="caption"></h2>
     <mat-icon (click)="ref.close()">close</mat-icon>
   </header>
 
@@ -11,45 +11,45 @@
 
     <ng-container *ngIf="!data.isClient; else clientTmpl">
       <mat-form-field appearance="fill">
-        <mat-label>Input component's name</mat-label>
+        <mat-label>Назва</mat-label>
         <input matInput formControlName="name">
-        <mat-hint>Name</mat-hint>
+        <mat-hint>Назва</mat-hint>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Select unit</mat-label>
+        <mat-label>Одиниця виміру</mat-label>
         <mat-select formControlName="unit" required>
           <mat-option>--</mat-option>
           <mat-option *ngFor="let unit of units" [value]="unit">
             {{unit.label}}
           </mat-option>
         </mat-select>
-        <mat-hint>Unit</mat-hint>
+        <mat-hint>Одиниця</mat-hint>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Input component's price</mat-label>
+        <mat-label>Ціна</mat-label>
         <input type="number" matInput formControlName="price">
-        <mat-hint>Price</mat-hint>
+        <mat-hint>Ціна</mat-hint>
       </mat-form-field>
     </ng-container>
 
     <ng-template #clientTmpl>
       <mat-form-field appearance="fill">
-        <mat-label>Select item</mat-label>
+        <mat-label>Компонент</mat-label>
         <mat-select formControlName="selectedItem" required>
           <mat-option>--</mat-option>
           <mat-option *ngFor="let component of components" [value]="component">
             {{component.name}}
           </mat-option>
         </mat-select>
-        <mat-hint>Unit</mat-hint>
+        <mat-hint>Компонент</mat-hint>
       </mat-form-field>
     </ng-template>
 
 
     <footer>
-      <button class="btn_success" type="submit" [disabled]="form.invalid">Save</button>
+      <button class="btn_success" type="submit" [disabled]="form.invalid">Зберегти</button>
     </footer>
   </form>
 </div>
