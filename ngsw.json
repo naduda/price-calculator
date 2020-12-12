@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1607778721318,
+  "timestamp": 1607779931115,
   "index": "/price-calculator/index.html",
   "assetGroups": [
     {
@@ -11,13 +11,13 @@
         "ignoreVary": true
       },
       "urls": [
-        "/price-calculator/4.122183f618e0c2f6488b.js",
+        "/price-calculator/4.98f28de43077fc223d61.js",
         "/price-calculator/favicon.ico",
         "/price-calculator/index.html",
-        "/price-calculator/main.b6247004172aaee1c79c.js",
+        "/price-calculator/main.74ad0c0c959f379db3ed.js",
         "/price-calculator/manifest.webmanifest",
         "/price-calculator/polyfills.bf99d438b005d57b2b31.js",
-        "/price-calculator/runtime.64fe4554091471aa78bd.js",
+        "/price-calculator/runtime.bbc71a1e13545afa6f77.js",
         "/price-calculator/styles.126b17a0274d43655d06.css"
       ],
       "patterns": [
@@ -47,7 +47,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/price-calculator/4.122183f618e0c2f6488b.js": "2b4263678a71c49b3ec1600cfb60e9050b7e37b6",
+    "/price-calculator/4.98f28de43077fc223d61.js": "3a1f262df08a13bac0f60451b9d151ad3d76f3fc",
     "/price-calculator/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "/price-calculator/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
     "/price-calculator/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
@@ -58,11 +58,11 @@
     "/price-calculator/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/price-calculator/assets/img/medal.svg": "163cb45de005d7507b87b78209207299b2bf8cb0",
     "/price-calculator/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/price-calculator/index.html": "4ae0584eaf6a990c464cf5018baf4c6c7414fb23",
-    "/price-calculator/main.b6247004172aaee1c79c.js": "5ad10d6b7340acb780ad2bae3a7d2c1d1a4cb1c9",
+    "/price-calculator/index.html": "fe3f05c5d3bcfa975b402ab62c7189bb9dfb4afa",
+    "/price-calculator/main.74ad0c0c959f379db3ed.js": "b9084a390c5e37e82cf1ead135b89d67beecc39c",
     "/price-calculator/manifest.webmanifest": "361172777bf07f68824b3cda9fb221de425d4f19",
     "/price-calculator/polyfills.bf99d438b005d57b2b31.js": "763cd3b34dfa4600ebb9d9588ec7116988e98920",
-    "/price-calculator/runtime.64fe4554091471aa78bd.js": "0c94a1cc301c35d53848054326a5a6b58ce79bb2",
+    "/price-calculator/runtime.bbc71a1e13545afa6f77.js": "c2eb7362b2d30c325a9b36e92fe06fa1f6aa7910",
     "/price-calculator/styles.126b17a0274d43655d06.css": "cf7916201278f555ebc61301ae7e6f91897c78e1"
   },
   "navigationUrls": [
